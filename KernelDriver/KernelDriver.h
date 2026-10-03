@@ -1,0 +1,81 @@
+#pragma once
+
+#ifdef _KERNEL_MODE
+#include <ntddk.h>
+#else
+#include <windows.h>
+#include <winioctl.h>
+#endif
+
+// ============================================================================
+// Ring 0 IOCTL Definitions & Communication Structs
+// ============================================================================
+
+#define FILE_DEVICE_RING0_STEALTH 0x00009999
+
+#define IOCTL_RING0_GET_MODULE_BASE CTL_CODE(FILE_DEVICE_RING0_STEALTH, 0x800, METHOD_BUFFERED, FILE_ANY_ACCESS)
+#define IOCTL_RING0_READ_MEMORY      CTL_CODE(FILE_DEVICE_RING0_STEALTH, 0x801, METHOD_BUFFERED, FILE_ANY_ACCESS)
+#define IOCTL_RING0_WRITE_MEMORY     CTL_CODE(FILE_DEVICE_RING0_STEALTH, 0x802, METHOD_BUFFERED, FILE_ANY_ACCESS)
+#define IOCTL_RING0_HIDE_PROCESS     CTL_CODE(FILE_DEVICE_RING0_STEALTH, 0x803, METHOD_BUFFERED, FILE_ANY_ACCESS)
+#define IOCTL_RING0_UNLINK_DRIVER    CTL_CODE(FILE_DEVICE_RING0_STEALTH, 0x804, METHOD_BUFFERED, FILE_ANY_ACCESS)
+#define IOCTL_RING0_INJECT_INPUT     CTL_CODE(FILE_DEVICE_RING0_STEALTH, 0x805, METHOD_BUFFERED, FILE_ANY_ACCESS)
+#define IOCTL_RING0_SPOOF_HWID       CTL_CODE(FILE_DEVICE_RING0_STEALTH, 0x806, METHOD_BUFFERED, FILE_ANY_ACCESS)
+
+// xbabazwenbirkan Virtual PC & VM Sandbox Control Codes
+#define IOCTL_XBABA_SPAWN_ISOLATED   CTL_CODE(FILE_DEVICE_RING0_STEALTH, 0x900, METHOD_BUFFERED, FILE_ANY_ACCESS)
+#define IOCTL_XBABA_SPOOF_HARDWARE   CTL_CODE(FILE_DEVICE_RING0_STEALTH, 0x901, METHOD_BUFFERED, FILE_ANY_ACCESS)
+#define IOCTL_XBABA_DKOM_UNLINK      CTL_CODE(FILE_DEVICE_RING0_STEALTH, 0x902, METHOD_BUFFERED, FILE_ANY_ACCESS)
+#define IOCTL_XBABA_WSK_REDIRECT     CTL_CODE(FILE_DEVICE_RING0_STEALTH, 0x903, METHOD_BUFFERED, FILE_ANY_ACCESS)
+#define IOCTL_XBABA_RING0_INPUT      CTL_CODE(FILE_DEVICE_RING0_STEALTH, 0x904, METHOD_BUFFERED, FILE_ANY_ACCESS)
+
+#pragma pack(push, 1)
+
+// Memory Copy Request
+typedef struct _RING0_MEMORY_REQUEST {
+    ULONG ProcessId;
+    ULONGLONG SourceAddress;
+    ULONGLONG TargetAddress;
+    ULONGLONG Size;
+} RING0_MEMORY_REQUEST, *PRING0_MEMORY_REQUEST;
+
+// Get Module Request
+typedef struct _RING0_MODULE_REQUEST {
+    ULONG ProcessId;
+    WCHAR ModuleName[260];
+    ULONGLONG ModuleBase;
+    ULONG ModuleSize;
+} RING0_MODULE_REQUEST, *PRING0_MODULE_REQUEST;
+
+// Process Hiding Request (DKOM)
+typedef struct _RING0_HIDE_PROCESS_REQUEST {
+    ULONG ProcessId;
+} RING0_HIDE_PROCESS_REQUEST, *PRING0_HIDE_PROCESS_REQUEST;
+
+// Ring 0 Synthetic Input Injection Request
+typedef struct _RING0_INPUT_REQUEST {
+    ULONG InputType; // 0 = Mouse, 1 = Keyboard
+    USHORT ButtonFlags;
+    SHORT  LastX;
+    SHORT  LastY;
+    USHORT MakeCode;
+    USHORT Flags;
+} RING0_INPUT_REQUEST, *PRING0_INPUT_REQUEST;
+
+// HWID Spoofing Request
+typedef struct _RING0_HWID_REQUEST {
+    CHAR SerialNumber[64];
+    CHAR MacAddress[6];
+} RING0_HWID_REQUEST, *PRING0_HWID_REQUEST;
+
+// xbabazwenbirkan Hardware & VM Sandbox Request
+typedef struct _XBABA_HARDWARE_SPOOF_REQ {
+    ULONG ProcessId;
+    WCHAR Hostname[64];
+    WCHAR MachineGuid[64];
+    WCHAR MotherboardSerial[64];
+    WCHAR DiskVolumeSerial[32];
+    UCHAR MacAddress[6];
+    USHORT DedicatedWarpPort;
+} XBABA_HARDWARE_SPOOF_REQ, *PXBABA_HARDWARE_SPOOF_REQ;
+
+#pragma pack(pop)

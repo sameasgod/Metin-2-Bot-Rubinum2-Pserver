@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ProxifierProfile version="102" platform="Windows" product_id="0" product_minver="400">
+  <Options>
+    <Resolve>
+      <AutoModeDetection enabled="false" />
+      <ViaProxy enabled="false" />
+      <BlockNonATypes enabled="false" />
+      <ExclusionList OnlyFromListMode="false">%ComputerName%; localhost; *.local; patch.ragames.com.tr; patch.ruyagames.com.tr; rascal.b-cdn.net; *.b-cdn.net; *.cloudflare.com</ExclusionList>
+      <DnsUdpMode>0</DnsUdpMode>
+    </Resolve>
+    <Encryption mode="basic" />
+    <ConnectionLoopDetection enabled="true" resolve="true" />
+    <Udp mode="mode_bypass" />
+    <LeakPreventionMode enabled="false" />
+    <ProcessOtherUsers enabled="false" />
+    <ProcessServices enabled="false" />
+    <HandleDirectConnections enabled="false" />
+    <HttpProxiesSupport enabled="false" />
+  </Options>
+  <ProxyList>
+    <Proxy id="100" type="SOCKS5">
+      <Authentication enabled="true">
+        <Password>AAACc1TpdSbiRA2xm/iaBbp2vBrHdwLBYv8pKysGW0nVEq8=</Password>
+        <Username>68e6758b13f8bb597045__cr.tr</Username>
+      </Authentication>
+      <Options>48</Options>
+      <Port>10000</Port>
+      <Address>gw.dataimpulse.com</Address>
+    </Proxy>
+    <Proxy id="101" type="SOCKS5">
+      <Authentication enabled="true">
+        <Password>AAACc1TpdSbiRA2xm/iaBbp2vBrHdwLBYv8pKysGW0nVEq8=</Password>
+        <Username>68e6758b13f8bb597045__cr.tr</Username>
+      </Authentication>
+      <Options>48</Options>
+      <Port>10001</Port>
+      <Address>gw.dataimpulse.com</Address>
+    </Proxy>
+    <Proxy id="102" type="SOCKS5">
+      <Authentication enabled="true">
+        <Password>AAACc1TpdSbiRA2xm/iaBbp2vBrHdwLBYv8pKysGW0nVEq8=</Password>
+        <Username>68e6758b13f8bb597045__cr.tr</Username>
+      </Authentication>
+      <Options>48</Options>
+      <Port>10002</Port>
+      <Address>gw.dataimpulse.com</Address>
+    </Proxy>
+    <Proxy id="103" type="SOCKS5">
+      <Authentication enabled="true">
+        <Password>AAACc1TpdSbiRA2xm/iaBbp2vBrHdwLBYv8pKysGW0nVEq8=</Password>
+        <Username>68e6758b13f8bb597045__cr.tr</Username>
+      </Authentication>
+      <Options>48</Options>
+      <Port>10003</Port>
+      <Address>gw.dataimpulse.com</Address>
+    </Proxy>
+    <Proxy id="104" type="SOCKS5">
+      <Authentication enabled="true">
+        <Password>AAACc1TpdSbiRA2xm/iaBbp2vBrHdwLBYv8pKysGW0nVEq8=</Password>
+        <Username>68e6758b13f8bb597045__cr.tr</Username>
+      </Authentication>
+      <Options>48</Options>
+      <Port>10004</Port>
+      <Address>gw.dataimpulse.com</Address>
+    </Proxy>
+    <Proxy id="105" type="SOCKS5">
+      <Authentication enabled="true">
+        <Password>AAACc1TpdSbiRA2xm/iaBbp2vBrHdwLBYv8pKysGW0nVEq8=</Password>
+        <Username>68e6758b13f8bb597045__cr.tr</Username>
+      </Authentication>
+      <Options>48</Options>
+      <Port>10005</Port>
+      <Address>gw.dataimpulse.com</Address>
+    </Proxy>
+    <Proxy id="106" type="SOCKS5">
+      <Authentication enabled="true">
+        <Password>AAACc1TpdSbiRA2xm/iaBbp2vBrHdwLBYv8pKysGW0nVEq8=</Password>
+        <Username>68e6758b13f8bb597045__cr.tr</Username>
+      </Authentication>
+      <Options>48</Options>
+      <Port>10006</Port>
+      <Address>gw.dataimpulse.com</Address>
+    </Proxy>
+    <Proxy id="107" type="SOCKS5">
+      <Authentication enabled="true">
+        <Password>AAACc1TpdSbiRA2xm/iaBbp2vBrHdwLBYv8pKysGW0nVEq8=</Password>
+        <Username>68e6758b13f8bb597045__cr.tr</Username>
+      </Authentication>
+      <Options>48</Options>
+      <Port>10007</Port>
+      <Address>gw.dataimpulse.com</Address>
+    </Proxy>
+    <Proxy id="108" type="SOCKS5">
+      <Authentication enabled="true">
+        <Password>AAACc1TpdSbiRA2xm/iaBbp2vBrHdwLBYv8pKysGW0nVEq8=</Password>
+        <Username>68e6758b13f8bb597045__cr.tr</Username>
+      </Authentication>
+      <Options>48</Options>
+      <Port>10008</Port>
+      <Address>gw.dataimpulse.com</Address>
+    </Proxy>
+    <Proxy id="109" type="SOCKS5">
+      <Authentication enabled="true">
+        <Password>AAACc1TpdSbiRA2xm/iaBbp2vBrHdwLBYv8pKysGW0nVEq8=</Password>
+        <Username>68e6758b13f8bb597045__cr.tr</Username>
+      </Authentication>
+      <Options>48</Options>
+      <Port>10009</Port>
+      <Address>gw.dataimpulse.com</Address>
+    </Proxy>
+  </ProxyList>
+  <ChainList />
+  <RuleList>
+    <Rule enabled="true">
+      <Action type="Direct" />
+      <Applications>#Mestan2.exe; xbabazwenbirkan.exe</Applications>
+      <Name>Patcher Direct (No Timeout)</Name>
+    </Rule>
+    <Rule enabled="true">
+      <Action type="Direct" />
+      <Applications>*Slot1*.exe; *Slot_1*.exe; metin2client_Slot1.exe</Applications>
+      <Name>Slot #1 Rule</Name>
+    </Rule>
+    <Rule enabled="true">
+      <Action type="Direct" />
+      <Applications>*Slot2*.exe; *Slot_2*.exe; metin2client_Slot2.exe</Applications>
+      <Name>Slot #2 Rule</Name>
+    </Rule>
+    <Rule enabled="true">
+      <Action type="Direct" />
+      <Applications>*Slot3*.exe; *Slot_3*.exe; metin2client_Slot3.exe</Applications>
+      <Name>Slot #3 Rule</Name>
+    </Rule>
+    <Rule enabled="true">
+      <Action type="Direct" />
+      <Applications>*Slot4*.exe; *Slot_4*.exe; metin2client_Slot4.exe</Applications>
+      <Name>Slot #4 Rule</Name>
+    </Rule>
+    <Rule enabled="true">
+      <Action type="Direct" />
+      <Applications>*Slot5*.exe; *Slot_5*.exe; metin2client_Slot5.exe</Applications>
+      <Name>Slot #5 Rule</Name>
+    </Rule>
+    <Rule enabled="true">
+      <Action type="Direct" />
+      <Applications>*Slot6*.exe; *Slot_6*.exe; metin2client_Slot6.exe</Applications>
+      <Name>Slot #6 Rule</Name>
+    </Rule>
+    <Rule enabled="true">
+      <Action type="Direct" />
+      <Applications>*Slot7*.exe; *Slot_7*.exe; metin2client_Slot7.exe</Applications>
+      <Name>Slot #7 Rule</Name>
+    </Rule>
+    <Rule enabled="true">
+      <Action type="Direct" />
+      <Applications>*Slot8*.exe; *Slot_8*.exe; metin2client_Slot8.exe</Applications>
+      <Name>Slot #8 Rule</Name>
+    </Rule>
+    <Rule enabled="true">
+      <Action type="Direct" />
+      <Applications>*Slot9*.exe; *Slot_9*.exe; metin2client_Slot9.exe</Applications>
+      <Name>Slot #9 Rule</Name>
+    </Rule>
+    <Rule enabled="true">
+      <Action type="Direct" />
+      <Applications>*Slot10*.exe; *Slot_10*.exe; metin2client_Slot10.exe</Applications>
+      <Name>Slot #10 Rule</Name>
+    </Rule>
+    <Rule enabled="true">
+      <Action type="Direct" />
+      <Applications>metin2client.bin; metin2client.exe</Applications>
+      <Name>Default Game Redirect</Name>
+    </Rule>
+    <Rule enabled="true">
+      <Name>Default</Name>
+      <Action type="Direct" />
+    </Rule>
+  </RuleList>
+</ProxifierProfile>

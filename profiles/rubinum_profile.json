@@ -1,0 +1,24 @@
+{
+  "serverName": "Rubinum Metin2 Private Server",
+  "targetExecutable": "rbclient.exe",
+  "metinIdStart": 8001,
+  "metinIdEnd": 8416,
+  "oreIdStart": 30301,
+  "oreIdEnd": 30306,
+  "preferredTargetDistance": 2000,
+  "enableWallhack": true,
+  "enableAutoLoot": true,
+  "freezeOnPlayerNearby": true,
+  "enableWhisperProtection": true,
+  "offsets": {
+    "nameOffset": 16,
+    "positionOffset": 732,
+    "isPlayerOffset": 744,
+    "isRenderedOffset": 832,
+    "attackStanceOffset": 1760,
+    "mobIdOffset": 1768,
+    "mobDiedOffset": 1840,
+    "uidOffset": 7252,
+    "skipCollisionOffset": 7260
+  }
+}
